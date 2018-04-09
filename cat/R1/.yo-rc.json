@@ -1,0 +1,265 @@
+{
+  "generator-cedrus-api": {
+    "haveConfigFile": true,
+    "discover": {
+      "ask": false,
+      "apiConsumes": [
+        "application/json"
+      ],
+      "apiProduces": [
+        "application/json"
+      ]
+    },
+    "detail": {
+      "ask": false,
+      "isPublic": true,
+      "httpMethods": [
+        "get",
+        "put",
+        "post",
+        "patch",
+        "delete"
+      ],
+      "httpStatusCodes": [
+        "204",
+        "404",
+        "500"
+      ],
+      "versioning": {
+        "enabled": true,
+        "type": "uri",
+        "versionNumber": [
+          "v1"
+        ],
+        "uriOrder": "resourceFirst",
+        "contentTypeOrder": "applicationFirst",
+        "customHeaderName": "version"
+      },
+      "apiData": {
+        "returnDataType": "No"
+      },
+      "records": {
+        "limit": 10
+      },
+      "cache": {
+        "RedisEnable": false,
+        "RedisHost": "pub-redis-19334.dal-05.1.sl.garantiadata.com",
+        "RedisPort": "19334",
+        "RedisPassword": "zKvyYzznhsdvYwgq",
+        "RedisExpire": 180
+      },
+      "pagination": {
+        "PaginationEnable": true
+      },
+      "filter": {
+        "FilterEnable": false
+      },
+      "security": {
+        "enabled": false,
+        "type": "none"
+      },
+      "logging": {
+        "enabled": false
+      }
+    },
+    "deploy": {
+      "ask": false,
+      "apiApplicationType": "nodejs",
+      "openWhisk": {
+        "OpenWhiskEnable": false
+      },
+      "tls": {
+        "TLSEnable": false
+      },
+      "cloudFoundry": {
+        "appName": "",
+        "appMemory": ""
+      },
+      "javaOptions": {
+        "basePackage": "io.cedrus.apigen",
+        "packagingType": "jar",
+        "framework": [
+          "jaxrs",
+          "jaxrs"
+        ],
+        "springBootDeployment": "tomcat"
+      }
+    },
+    "multipleResources": {
+      "enabled": true,
+      "resources": [
+        {
+          "resourceName": "cat",
+          "jsonFilePath": "{\"type\":\"object\",\"properties\":{\"firstName\":{\"type\":\"string\"},\"lastName\":{\"type\":\"string\"},\"address\":{\"type\":\"object\",\"properties\":{\"streetNumber\":{\"type\":\"string\"},\"streetName\":{\"type\":\"string\"}},\"required\":[\"streetNumber\",\"streetName\"]}},\"required\":[\"firstName\",\"lastName\",\"address\"]}",
+          "isPublic": true,
+          "httpMethods": [
+            "get",
+            "put",
+            "post",
+            "patch",
+            "delete"
+          ],
+          "httpStatusCodes": [
+            "204",
+            "404",
+            "500"
+          ],
+          "requireTestDataType": "Test Data",
+          "apiFakerMappingFileProvided": true,
+          "apiFakeMappingFileType": "object",
+          "apiFakerMappingFileLocation": {
+            "type": "object",
+            "properties": {
+              "firstName": {
+                "type": "string",
+                "faker": "name.firstName"
+              },
+              "lastName": {
+                "type": "string",
+                "faker": "name.lastName"
+              },
+              "address": {
+                "type": "object",
+                "properties": {
+                  "streetNumber": {
+                    "type": "string",
+                    "faker": "address.streetAddress"
+                  },
+                  "streetName": {
+                    "type": "string",
+                    "faker": "address.streetName"
+                  }
+                },
+                "required": [
+                  "streetNumber",
+                  "streetName"
+                ]
+              }
+            },
+            "required": [
+              "firstName",
+              "lastName",
+              "address"
+            ]
+          },
+          "apiFakerMappingJsonType": "Data Schema",
+          "recordsLimit": "5",
+          "requireQuery": false,
+          "whichParameter": null,
+          "fake_data": null
+        }
+      ],
+      "testingMode": false
+    },
+    "javaOptions": {
+      "basePackage": "io.cedrus.apigen",
+      "packagingType": "jar",
+      "framework": [
+        "jaxrs",
+        "jaxrs"
+      ],
+      "springBootDeployment": "tomcat"
+    },
+    "apiOverview": {
+      "apiName": "cat",
+      "apiBasePath": "/api",
+      "apiDescription": "cats"
+    },
+    "dataInput": {
+      "dataInputType": "JSON Input"
+    },
+    "JSONExtraction": [
+      {
+        "resourceName": "cat",
+        "jsonFilePath": "{\"type\":\"object\",\"properties\":{\"firstName\":{\"type\":\"string\"},\"lastName\":{\"type\":\"string\"},\"address\":{\"type\":\"object\",\"properties\":{\"streetNumber\":{\"type\":\"string\"},\"streetName\":{\"type\":\"string\"}},\"required\":[\"streetNumber\",\"streetName\"]}},\"required\":[\"firstName\",\"lastName\",\"address\"]}",
+        "isPublic": true,
+        "httpMethods": [
+          "get",
+          "put",
+          "post",
+          "patch",
+          "delete"
+        ],
+        "httpStatusCodes": [
+          "204",
+          "404",
+          "500"
+        ],
+        "requireTestDataType": "Test Data",
+        "apiFakerMappingFileProvided": true,
+        "apiFakeMappingFileType": "object",
+        "apiFakerMappingFileLocation": {
+          "type": "object",
+          "properties": {
+            "firstName": {
+              "type": "string",
+              "faker": "name.firstName"
+            },
+            "lastName": {
+              "type": "string",
+              "faker": "name.lastName"
+            },
+            "address": {
+              "type": "object",
+              "properties": {
+                "streetNumber": {
+                  "type": "string",
+                  "faker": "address.streetAddress"
+                },
+                "streetName": {
+                  "type": "string",
+                  "faker": "address.streetName"
+                }
+              },
+              "required": [
+                "streetNumber",
+                "streetName"
+              ]
+            }
+          },
+          "required": [
+            "firstName",
+            "lastName",
+            "address"
+          ]
+        },
+        "apiFakerMappingJsonType": "Data Schema",
+        "recordsLimit": "5",
+        "requireQuery": false,
+        "whichParameter": null,
+        "fake_data": null,
+        "jsonSchema": {
+          "type": "object",
+          "properties": {
+            "firstName": {
+              "type": "string"
+            },
+            "lastName": {
+              "type": "string"
+            },
+            "address": {
+              "type": "object",
+              "properties": {
+                "streetNumber": {
+                  "type": "string"
+                },
+                "streetName": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "streetNumber",
+                "streetName"
+              ]
+            }
+          },
+          "required": [
+            "firstName",
+            "lastName",
+            "address"
+          ]
+        }
+      }
+    ]
+  }
+}
